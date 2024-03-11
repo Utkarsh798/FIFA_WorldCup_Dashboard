@@ -1,0 +1,136 @@
+.LatestWorldCupTile{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.3fr;
+    grid-template-rows: 1fr 0.1fr;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+
+    border-radius: 20px;
+    box-shadow: 0 4px 8px;
+    margin: 20px 55px 30px;
+
+    .year-section{
+        grid-row: 2 span;
+        grid-column: 1 span;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2em;
+        flex-direction: column;
+        text-shadow: 8px 8px 16px rgba(0, 0, 1, 0.5);
+    }
+
+    .winner-section{
+        font-size: 1.4rem;
+        margin-top: 10px;
+
+
+        .winner-team-name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
+    .runner-up-section{
+
+        font-size: 1.2rem;
+        align-items: center;
+        margin-top: 10px;
+
+
+        .runner-up-team-name{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+    }
+
+
+    .icon-section{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        font-size: 2.5rem;
+        margin-top: 30px;
+        height: 6px;
+        width: 60px;
+
+    }
+
+    .icon path {
+        filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.5));
+    }
+
+    .hidden-content{
+        grid-column: 3 span;
+        margin: 10px;
+        height:100px;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        max-height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease-in-out;
+
+
+        .first-content{
+            margin: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .name{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+        }
+        .second-content{
+            margin: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+        }
+        .content{
+            margin: 10px;
+        }
+    }
+
+
+
+    .reveal-content{
+        grid-column: 3 span;
+        margin: 10px;
+        height:100px;
+        display: grid;
+        grid-template-columns: 0.5fr 1fr;
+        transition: height 0.5s ease-in-out;
+
+
+        .first-content{
+            margin: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            .name{
+                font-size: 25px;
+                font-weight: bold;
+            }
+
+        }
+        .second-content{
+            margin: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+
+        }
+        .content{
+            margin: 10px;
+        }
+    }
+
+}

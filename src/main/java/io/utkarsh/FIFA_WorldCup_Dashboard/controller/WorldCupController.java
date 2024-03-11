@@ -3,12 +3,14 @@ package io.utkarsh.FIFA_WorldCup_Dashboard.controller;
 import io.utkarsh.FIFA_WorldCup_Dashboard.model.WorldCup;
 import io.utkarsh.FIFA_WorldCup_Dashboard.repository.WorldCupRepository;
 import org.springframework.data.domain.Sort;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class WorldCupController {
 
     public WorldCupRepository worldCupRepository;
