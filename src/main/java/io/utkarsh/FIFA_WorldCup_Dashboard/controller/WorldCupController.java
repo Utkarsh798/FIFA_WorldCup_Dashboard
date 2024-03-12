@@ -1,9 +1,9 @@
 package io.utkarsh.FIFA_WorldCup_Dashboard.controller;
 
-import io.utkarsh.FIFA_WorldCup_Dashboard.model.Stage;
+import io.utkarsh.FIFA_WorldCup_Dashboard.model.Matches;
 import io.utkarsh.FIFA_WorldCup_Dashboard.model.Statistics;
 import io.utkarsh.FIFA_WorldCup_Dashboard.model.WorldCup;
-import io.utkarsh.FIFA_WorldCup_Dashboard.repository.StageRepository;
+import io.utkarsh.FIFA_WorldCup_Dashboard.repository.MatchRepository;
 import io.utkarsh.FIFA_WorldCup_Dashboard.repository.StatisticsRepository;
 import io.utkarsh.FIFA_WorldCup_Dashboard.repository.WorldCupRepository;
 import org.springframework.data.domain.Sort;
@@ -20,15 +20,15 @@ public class WorldCupController {
 
     private final WorldCupRepository worldCupRepository;
     private final StatisticsRepository statisticsRepository;
-    private final StageRepository stageRepository;
+    private final MatchRepository matchRepository;
 
 
     public WorldCupController(WorldCupRepository worldCupRepository,
                               StatisticsRepository statisticsRepository,
-                              StageRepository stageRepository) {
+                              MatchRepository matchRepository) {
         this.worldCupRepository = worldCupRepository;
         this.statisticsRepository = statisticsRepository;
-        this.stageRepository = stageRepository;
+        this.matchRepository = matchRepository;
     }
 
     @GetMapping("/worldcup")
@@ -43,8 +43,8 @@ public class WorldCupController {
     }
 
     @GetMapping("/worldcup/{year}/matches")
-    public List<Stage> getALLStageByYear(@PathVariable String year){
-        return this.stageRepository.getStageByYear(year);
+    public List<Matches> getALLStageByYear(@PathVariable String year){
+        return this.matchRepository.getStageByYear(year);
     }
 
 }

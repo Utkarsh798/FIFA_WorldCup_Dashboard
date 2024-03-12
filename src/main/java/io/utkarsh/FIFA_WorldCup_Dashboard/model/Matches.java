@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Entity
 @Table(name = "matches")
-public class Stage {
+public class Matches {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
