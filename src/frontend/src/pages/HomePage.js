@@ -21,7 +21,6 @@ export const HomePage = () => {
                 const response_statistics = await fetch(`http://localhost:8080/worldcup/statistics`);
                 const statistics_data = await response_statistics.json();
                 setStatistics(statistics_data);
-                console.log((statistics_data))
             };
             fetchAllWorldCup();
         }, []
@@ -29,8 +28,6 @@ export const HomePage = () => {
 
     const handleYearSelect = (id) => {
         setSelectedYearId(id);
-        console.log("Selected year :", id);
-        // Do whatever you need to do with the selected year ID in the parent component
     };
 
 

@@ -13,7 +13,7 @@ export const LatestWorldCupTile = ({worldcup}) => {
 
 
     return (
-        <div className="LatestWorldCupTile" >
+        <div className="LatestWorldCupTile">
 
             <div className="year-section">
                 <h2>
@@ -23,23 +23,16 @@ export const LatestWorldCupTile = ({worldcup}) => {
             </div>
 
 
-
-
             <div className="winner-section">
                 <h3>Winner</h3>
                 <h1 className="winner-team-name"> {worldcup.winner}</h1>
             </div>
 
 
-
-
             <div className="runner-up-section">
                 <h4>Runner-up</h4>
                 <h3 className="runner-up-team-name"> {worldcup.second}</h3>
             </div>
-
-
-
 
 
             <div className="icon-section" onClick={toggleAction}>
@@ -58,24 +51,23 @@ export const LatestWorldCupTile = ({worldcup}) => {
             </div>
 
             <div className="Detail-section">
-                <Link to={"#"} className="Link-to-next-section"> Details >> </Link>
+                <Link to={"https://www.google.com/"} className="Link-to-next-section"> Details >> </Link>
             </div>
 
 
             <div className={!isVisible ? 'hidden-content' : 'reveal-content'}>
                 <div className="first-content">
-                    <p className="content"> Third Place <h3 className="name"> {worldcup.third} </h3></p>
-                    <p className="content"> Fourth Place <h3 className="name">{worldcup.fourth}</h3></p>
+                    <p className="content">Third Place <strong className="name">{worldcup.third}</strong></p>
+                    <p className="content">Fourth Place <strong className="name">{worldcup.fourth}</strong></p>
                 </div>
                 <div className="second-content">
-                    <p className="content"> Total Goal Scored: {worldcup.goal_scored}</p>
-                    <p className="content"> Total Teams Participated: {worldcup.total_teams}</p>
-                    <p className="content"> Total games Played: {worldcup.total_games}</p>
-                    <p className="content"> Attended by {worldcup.attendance} people.</p>
+                    <p className="content">Host: {worldcup.host}</p>
+                    <p className="content">Total Goal Scored: {worldcup.goal_scored}</p>
+                    <p className="content">Total Teams Participated: {worldcup.total_teams}</p>
+                    <p className="content">Total games Played: {worldcup.total_games}</p>
+                    <p className="content">Attended by {worldcup.attendance} people.</p>
                 </div>
             </div>
-
-
 
 
         </div>
