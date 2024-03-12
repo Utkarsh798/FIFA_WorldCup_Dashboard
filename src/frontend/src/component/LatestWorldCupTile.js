@@ -1,6 +1,7 @@
 import {React, useState} from "react";
 
 import './LatestWorldCupTile.css'
+import {Link} from "react-router-dom";
 
 export const LatestWorldCupTile = ({worldcup}) => {
 
@@ -13,8 +14,6 @@ export const LatestWorldCupTile = ({worldcup}) => {
 
     return (
         <div className="LatestWorldCupTile" >
-
-
 
             <div className="year-section">
                 <h2>
@@ -58,7 +57,9 @@ export const LatestWorldCupTile = ({worldcup}) => {
                 )}
             </div>
 
-
+            <div className="Detail-section">
+                <Link to={"#"} className="Link-to-next-section"> Details >> </Link>
+            </div>
 
 
             <div className={!isVisible ? 'hidden-content' : 'reveal-content'}>

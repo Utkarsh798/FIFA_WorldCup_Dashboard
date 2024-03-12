@@ -3,10 +3,12 @@ import React, {useEffect, useState} from 'react';
 import './HomePage.css';
 import {LatestWorldCupTile} from "../component/LatestWorldCupTile";
 import {DropDownYearSelection} from "../component/DropDownYearSelection";
+import {WorldCupTable} from "../component/WorldCupTable";
 
 export const HomePage = () => {
 
     const [worldcup, setWorldcups] = useState();
+    const [statistics, setStatistics] = useState();
     const [selectedYearId, setSelectedYearId] = useState(3);
 
     useEffect(
@@ -16,6 +18,10 @@ export const HomePage = () => {
                 const data = await response.json();
                 setWorldcups(data);
 
+                const response_statistics = await fetch(`http://localhost:8080/worldcup/statistics`);
+                const statistics_data = await response_statistics.json();
+                setStatistics(statistics_data);
+                console.log((statistics_data))
             };
             fetchAllWorldCup();
         }, []
@@ -26,6 +32,7 @@ export const HomePage = () => {
         console.log("Selected year :", id);
         // Do whatever you need to do with the selected year ID in the parent component
     };
+
 
     return (
         <div className="HomePage">
@@ -57,6 +64,10 @@ export const HomePage = () => {
                 )}
             </div>
 
+            <div className="statistics-table-section">
+                <p> Statistics </p>
+                <WorldCupTable data={statistics} />
+            </div>
         </div>
     );
 }

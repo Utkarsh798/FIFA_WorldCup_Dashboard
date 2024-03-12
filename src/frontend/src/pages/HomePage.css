@@ -1,9 +1,7 @@
 .HomePage{
     display: grid;
     grid-template-columns: 60% 40%;
-    grid-template-rows: 5fr auto auto auto;
-
-
+    grid-template-rows: 5fr auto auto auto auto;
 
     .app-name{
         grid-column: 1 span;
@@ -46,6 +44,20 @@
         width:500px;
         height:50px;
         margin:20px;
+    }
+
+    .statistics-table-section{
+        grid-column: 2 span;
+        width:800px;
+        margin-left: 200px;
+        margin-top:50px;
+    }
+    .statistics-table-section p{
+        grid-column: 2 span;
+        font-size: 2rem;
+        margin-right: 100px;
+        margin-top:50px;
+
     }
 
 }

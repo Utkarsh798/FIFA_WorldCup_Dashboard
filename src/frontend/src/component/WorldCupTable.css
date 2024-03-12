@@ -1,0 +1,48 @@
+.table-container {
+    margin-top: 30px;
+
+}
+
+.world-cup-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 16px solid #ddd;
+}
+
+.world-cup-table th, .world-cup-table td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.world-cup-table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    border-bottom: 8px solid #ddd;
+    font-size: 1.5rem;
+}
+
+
+.world-cup-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.world-cup-table tbody tr:hover {
+    background-color: #ddd;
+}
+.world-cup-table tbody tr {
+    animation: fade-in 0.5s ease-out;
+}
+
+.world-cup-table tbody tr:hover {
+    background-color: #ddd;
+    animation: none; /* Disable animation on hover */
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
