@@ -1,6 +1,9 @@
-package io.utkarsh.FIFA_WorldCup_Dashboard.model;
+package io.utkarsh.FIFA_WorldCup_Dashboard.DataProcess;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,45 +16,20 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "matches")
-public class Matches {
+public class StageMatch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "year")
-    private String year;
-
-    @Column(name = "stage")
     private String stageName;
-
-    @Column(name = "home_team")
     private String home_team;
-
-    @Column(name = "away_team")
     private String away_team;
-
-    @Column(name ="home_score")
     private int home_score;
-
-    @Column(name ="away_score")
     private int away_score;
-
-    @Column(name ="winning_team")
     private String winning_team;
-
-    @Column(name ="losing_team")
     private String losing_team;
-
-    @Column(name ="date")
     private LocalDate date;
-
-    @Column(name ="home_penalty")
     private Integer home_penalty;
-
-    @Column(name ="away_penalty")
     private Integer away_penalty;
-
 
 }
