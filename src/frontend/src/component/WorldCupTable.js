@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './WorldCupTable.css'; // Import your CSS file
+import './WorldCupTable.css';
 
 export const WorldCupTable = ({ data }) => {
     if (!data || !Array.isArray(data) || data.length === 0) {

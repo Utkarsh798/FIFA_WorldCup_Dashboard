@@ -33,11 +33,16 @@ export const HomePage = () => {
 
     return (
         <div className="HomePage">
+
             <div className="app-name">
                 <h1> FIFA World Cup Dashboard</h1>
+                <p>
+                    This dashboard provides comprehensive information on FIFA World Cup tournaments over the years, including details on winners, host nations, match data, and additional insights. You can also explore team statistics and which team played in specific tournament on Details Tab .
+                </p>
             </div>
+
             <div className="app-logo">
-                <img src="" alt="World-cup-logo"/>
+                <img src="https://ichef.bbci.co.uk/news/976/cpsprodpb/C72B/production/_123978905_drawgraphic.jpg" alt="World-cup-logo"/>
             </div>
             <div className="latest-worldcup-section">
                 {worldcup && worldcup.length > 0 && (

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import './DropDownYearSelection.css'
 import { Dropdown } from 'primereact/dropdown';
-import {items} from "./YearSelectionArray";
+import {items} from "../MappingArrays/YearSelectionArray";
 
 export const DropDownYearSelection = ({onSelect }) => {
 
