@@ -237,6 +237,15 @@
 
             .text{
                 margin:10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .ic_stadium-logo,.ic_soccer_ball-logo {
+                    border-radius: 0.4rem;
+                    width: 70px;
+                    margin-left:10px;
+                }
+
             }
 
         }
@@ -252,6 +261,15 @@
 
             .text{
                 margin-top:10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .goal-score-logo,.attendance-logo{
+                    border-radius: 0.4rem;
+                    width: 120px;
+                    margin-left:10px;
+                }
+
             }
         }
 
