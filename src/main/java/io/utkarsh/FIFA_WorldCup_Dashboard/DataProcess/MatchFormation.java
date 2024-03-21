@@ -20,6 +20,6 @@ public class MatchFormation {
     private String year;
 
     @Transient
-    private Map<String, List<Games>> stageMatchList;
+    private Map<String, List<Games>> MatchListByDates;
 
 }

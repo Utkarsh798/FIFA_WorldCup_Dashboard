@@ -66,7 +66,7 @@ public class ModelService {
                 list_games.put(formatted_date,gamesList);
             }
         }
-        matchFormation.setStageMatchList(list_games);
+        matchFormation.setMatchListByDates(list_games);
         return matchFormation;
     }
 

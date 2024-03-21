@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
-import {Group} from "../component/Group";
-import './WorldCupPage.css';
+import {Dates} from "../component/Dates";
+import './WorldCup_Matches_Page.css';
 import {worldcupImg} from "../MappingArrays/WorldCupImageArray";
 
-export const WorldCupPage = () => {
+export const WorldCup_Matches_Page = () => {
 
     const [worldcupInfo, setWorldcupInfo] = useState(null);
     const {year} = useParams();
@@ -17,7 +17,7 @@ export const WorldCupPage = () => {
         () => {
 
             const fetchAllWorldCupMatches = async () => {
-                const response = await fetch(`http://localhost:8080/worldcup/allMatches/${year}`);
+                const response = await fetch(`http://localhost:8080/worldcup/${year}`);
                 const data = await response.json();
                 setWorldcupInfo(data);
                 console.log(data);
@@ -38,12 +38,15 @@ export const WorldCupPage = () => {
             </div>
 
             {worldcupInfo && (
-                <div className="stage-section">
-                    {Object.entries(worldcupInfo.stageMatchList).map(([stage, matches]) => (
-                        <Group key={stage} stage={stage} matches={matches} />
+                <div className="date-section">
+                    {Object.entries(worldcupInfo.matchListByDates).map(([stage, matches]) => (
+                        <Dates key={stage} stage={stage} matches={matches} />
                     ))}
                 </div>
             )}
+            <div className="winning-section">
+                <h1> Winner : </h1>
+            </div>
         </div>
     );
 }

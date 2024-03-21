@@ -126,7 +126,7 @@ export const LatestWorldCupTile = ({worldcup}) => {
             </div>
 
             <div className="detail-link-container">
-                <Link to={`worldcup/allMatches/${worldcup.year}`} className="detail-link">More Detail</Link>
+                <Link to={`worldcup/${worldcup.year}`} className="detail-link">More Detail</Link>
             </div>
         </div>
     );

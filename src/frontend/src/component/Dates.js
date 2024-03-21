@@ -1,13 +1,13 @@
 import React from "react";
 import {Match} from "./Match";
-import './Group.css';
+import './Dates.css';
 
-export const Group = ({stage, matches}) => {
+export const Dates = ({stage, matches}) => {
 
 
     return (
-        <div className="Group">
-            <div className="stage-name-section">
+        <div className="Dates">
+            <div className="year-text-section">
                 <h2>{stage}</h2>
             </div>
             <div className="each-match-section">
