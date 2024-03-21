@@ -7,10 +7,10 @@ import {Link} from "react-router-dom";
 export const LatestWorldCupTile = ({worldcup}) => {
 
     const [isVisible, setIsVisible] = useState(false);
-    const WinnerTeamLogo = logoArray.find(team => team.name === worldcup.winner)?.logoImg;
-    const RunnerUpTeamLogo = logoArray.find(team => team.name === worldcup.second)?.logoImg;
-    const ThirdPlaceTeamLogo = logoArray.find(team => team.name === worldcup.third)?.logoImg;
-    const FourthPlaceTeamLogo = logoArray.find(team => team.name === worldcup.fourth)?.logoImg;
+    const WinnerTeamLogo = logoArray.find(year => year.name === worldcup.winner)?.logoImg;
+    const RunnerUpTeamLogo = logoArray.find(year => year.name === worldcup.second)?.logoImg;
+    const ThirdPlaceTeamLogo = logoArray.find(year => year.name === worldcup.third)?.logoImg;
+    const FourthPlaceTeamLogo = logoArray.find(year => year.name === worldcup.fourth)?.logoImg;
 
 
     const toggleAction = () =>{

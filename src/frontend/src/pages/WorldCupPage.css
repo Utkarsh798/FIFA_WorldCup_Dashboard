@@ -1,12 +1,12 @@
 .WorldCupPage{
     display:grid;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: 5fr auto;
+    grid-template-columns: 55% 45%;
+    grid-template-rows: auto auto;
     border: 1px solid black;
 
     .year-name-section{
         grid-column: 1 span;
-        height: 150px;
+        height: 330px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -16,20 +16,22 @@
         position: relative;
         font-weight: bolder;
         text-shadow: 8px 8px 16px rgba(0, 0, 1, 0.5);
-        animation: zoomInOut 4s infinite alternate;
+
+
     }
 
     .logo-section{
         grid-column: 1 span;
-        border: 2px solid black;
 
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: flex-start;
+        align-items: flex-start;
 
-        position: relative;
-        font-weight: bolder;
-        text-shadow: 8px 8px 16px rgba(0, 0, 1, 0.5);
-        animation: zoomInOut 4s infinite alternate;
+
+        img {
+            border-radius: 0.4rem;
+            width: 350px;
+            margin:10px;
+        }
     }
 }

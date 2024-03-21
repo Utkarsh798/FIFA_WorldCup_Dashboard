@@ -23,6 +23,12 @@ public class Matches {
     @Column(name = "year")
     private String year;
 
+    @Column(name = "country")
+    private String country;
+
+    @Column(name = "city")
+    private String city;
+
     @Column(name = "stage")
     private String stageName;
 

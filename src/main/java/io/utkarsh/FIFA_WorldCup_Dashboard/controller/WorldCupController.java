@@ -32,9 +32,12 @@ public class WorldCupController {
         return this.modelService.getStatistics();
     }
 
-    @GetMapping("/worldcup/allMatches/{year}")
-    public MatchFormation getALLMatches(@PathVariable String year){
-        return modelService.getAllMatches(year);
+
+
+    @GetMapping("/worldcup/{year}")
+    public MatchFormation getMatchesByYear(@PathVariable String year){
+        return modelService.getMatchesByYear(year);
     }
+
 
 }

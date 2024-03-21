@@ -2,11 +2,16 @@ import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {Group} from "../component/Group";
 import './WorldCupPage.css';
+import {worldcupImg} from "../MappingArrays/WorldCupImageArray";
 
 export const WorldCupPage = () => {
 
     const [worldcupInfo, setWorldcupInfo] = useState(null);
     const {year} = useParams();
+
+    const worldCupLogo = worldcupInfo && worldcupInfo.year ?
+                                    worldcupImg.find(year_selected => year_selected.yearID === worldcupInfo.year)?.imgUrl : null;
+
 
     useEffect(
         () => {
@@ -25,10 +30,11 @@ export const WorldCupPage = () => {
     return (
         <div className="WorldCupPage">
             <div className="year-name-section">
-                <h1>{worldcupInfo && worldcupInfo.year}'s WorldCup</h1>
+                <h1>FIFA WorldCup <br/>{worldcupInfo && worldcupInfo.year ? `${worldcupInfo.year}` : 'Loading...'}</h1>
             </div>
             <div className="logo-section">
-                logo
+                {worldCupLogo &&
+                    <img className="winner-logo" src={worldCupLogo} alt={worldcupInfo.year}/>}
             </div>
 
             {worldcupInfo && (
