@@ -9,8 +9,6 @@ import java.util.List;
 
 public interface MatchRepository extends JpaRepository<Matches,Long> {
 
-
-
     @Query("select m from Matches m where m.year = :year order by m.date")
     List<Matches> getAllMatchByDate(@Param("year") String year);
 
