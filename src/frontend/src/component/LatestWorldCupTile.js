@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-
+import {motion} from "framer-motion";
 import './LatestWorldCupTile.css'
 import {logoArray} from "../MappingArrays/LogoArray";
 import {Link} from "react-router-dom";
@@ -19,7 +19,11 @@ export const LatestWorldCupTile = ({worldcup}) => {
 
 
     return (
-        <div className="LatestWorldCupTile">
+        <motion.div className="LatestWorldCupTile"
+                    initial={{y:"10px", opacity:0}}
+                    animate={{y:0, opacity:1}}
+                    exit={{y:"50%", opacity:0}}
+                    transition={{duration: 0.7, delay: 0.2}}>
             <div className="LatestWorldCupTile-card-tile">
 
                 <div className="year-section">
@@ -128,6 +132,6 @@ export const LatestWorldCupTile = ({worldcup}) => {
             <div className="detail-link-container">
                 <Link to={`worldcup/${worldcup.year}`} className="detail-link">More Detail</Link>
             </div>
-        </div>
+        </motion.div>
     );
 }

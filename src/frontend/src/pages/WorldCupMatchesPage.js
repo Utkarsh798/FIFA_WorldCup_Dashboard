@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
 import {Dates} from "../component/Dates";
-import './WorldCup_Matches_Page.css';
+import {motion} from "framer-motion";
+import './WorldCupMatchesPage.css';
 import {worldcupImg} from "../MappingArrays/WorldCupImageArray";
 
-export const WorldCup_Matches_Page = () => {
+export const WorldCupMatchesPage = () => {
 
     const [worldcupInfo, setWorldcupInfo] = useState(null);
     const {year} = useParams();
@@ -17,7 +18,7 @@ export const WorldCup_Matches_Page = () => {
         () => {
 
             const fetchAllWorldCupMatches = async () => {
-                const response = await fetch(`http://localhost:8080/worldcup/${year}`);
+                const response = await fetch(`${process.env.REACT_APP_API_ROOT_URL}/worldcup/${year}`);
                 const data = await response.json();
                 setWorldcupInfo(data);
                 console.log(data);
@@ -29,24 +30,33 @@ export const WorldCup_Matches_Page = () => {
 
     return (
         <div className="WorldCupPage">
-            <div className="year-name-section">
+            <motion.div className="year-name-section"
+                        initial={{y:"10px", opacity:0}}
+                        animate={{y:0, opacity:1}}
+                        exit={{y:"50%", opacity:0}}
+                        transition={{duration: 0.7, delay: 0.2}}>
                 <h1>FIFA WorldCup <br/>{worldcupInfo && worldcupInfo.year ? `${worldcupInfo.year}` : 'Loading...'}</h1>
-            </div>
-            <div className="logo-section">
+            </motion.div>
+            <motion.div className="logo-section"
+                        initial={{y:"10px", opacity:0}}
+                        animate={{y:0, opacity:1}}
+                        exit={{y:"50%", opacity:0}}
+                        transition={{duration: 0.7, delay: 0.3}}>
                 {worldCupLogo &&
                     <img className="winner-logo" src={worldCupLogo} alt={worldcupInfo.year}/>}
-            </div>
+            </motion.div>
 
             {worldcupInfo && (
-                <div className="date-section">
+                <motion.div className="date-section"
+                            initial={{y:"10px", opacity:0}}
+                            animate={{y:0, opacity:1}}
+                            exit={{y:"50%", opacity:0}}
+                            transition={{duration: 0.7, delay: 0.4}}>
                     {Object.entries(worldcupInfo.matchListByDates).map(([stage, matches]) => (
                         <Dates key={stage} stage={stage} matches={matches} />
                     ))}
-                </div>
+                </motion.div>
             )}
-            <div className="winning-section">
-                <h1> Winner : </h1>
-            </div>
         </div>
     );
 }
